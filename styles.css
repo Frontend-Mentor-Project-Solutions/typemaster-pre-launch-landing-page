@@ -1,0 +1,39 @@
+.page-grid {
+  --page-padding: 2rem;
+  --content-max-width: 1110px;
+
+  display: grid;
+  grid-template-columns:
+    minmax(var(--page-padding), 1fr)
+    [content-start]
+    min(100% - (var(--page-padding) * 2), var(--content-max-width))
+    [content-end]
+    minmax(var(--page-padding), 1fr);
+
+  > * {
+    grid-column: content;
+  }
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.hero > * {
+  grid-column: 1 / -1;
+}
+
+.gallery {
+  img:nth-child(2) {
+    grid-column: span 2;
+  }
+
+  .section-copy {
+    grid-column: 1 / -1;
+  }
+}
+
+.features > * {
+  grid-column: 1 / -1;
+}

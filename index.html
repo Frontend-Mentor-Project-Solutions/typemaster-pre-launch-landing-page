@@ -11,47 +11,41 @@
       href="./assets/favicon-32x32.png"
     />
 
+    <link rel="stylesheet" href="resets.css" />
+    <link rel="stylesheet" href="styles.css" />
+
     <title>Frontend Mentor | Typemaster pre-launch landing page</title>
   </head>
   <body>
-    <header>
+    <header class="page-grid">
       <img src="assets/icons/logo.svg" alt="Typemaster logo" />
       <a href="#">Pre-oder now</a>
     </header>
 
-    <main>
+    <main class="page-grid">
       <section class="hero">
-        <h1>Typemaster Keyboard</h1>
+        <div class="section-copy">
+          <h1>Typemaster Keyboard</h1>
 
-        <p>
-          Improve your productivity and gaming without breaking the bank.
-          Upgrade to a high quality mechanical typing experience.
-        </p>
+          <p>
+            Improve your productivity and gaming without breaking the bank.
+            Upgrade to a high quality mechanical typing experience.
+          </p>
 
-        <div class="button-group">
-          <a href="#">Pre-order now</a>
-          <a href="#">Release on 5/27</a>
+          <div class="button-group">
+            <a href="#">Pre-order now</a>
+            <a href="#">Release on 5/27</a>
+          </div>
         </div>
 
         <img
+          class="hero-image"
           src="assets/images/image-keyboard.jpg"
           alt="A mechanical keyboard"
         />
-
-        <img src="assets/icons/pattern-square.svg" alt="" />
       </section>
 
-      <section>
-        <h2>Mechanical Wireless Keyboard</h2>
-
-        <p>
-          The Typemaster keyboard boasts top-notch build and practical design.
-          It offers a wide variety of switches and keycaps, along with reliable
-          wireless connectivity.
-        </p>
-
-        <img src="assets/icons/pattern-square.svg" alt="" />
-
+      <section class="gallery">
         <img
           src="assets/images/image-phone-and-keyboard.jpg"
           alt="Typemaster mechanical keyboard next to a smartphone"
@@ -60,9 +54,19 @@
           src="assets/images/image-glass-and-keyboard.jpg"
           alt="Typemaster mechanical keyboard on a modern workspace desk "
         />
+
+        <div class="section-copy">
+          <h2>Mechanical Wireless Keyboard</h2>
+
+          <p>
+            The Typemaster keyboard boasts top-notch build and practical design.
+            It offers a wide variety of switches and keycaps, along with
+            reliable wireless connectivity.
+          </p>
+        </div>
       </section>
 
-      <section aria-label="Features">
+      <section class="features" aria-label="Features">
         <article>
           <h3>Highly compatible</h3>
 
@@ -105,7 +109,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="page-grid">
       <p>Typemaster 2021 | All Rights Reserved</p>
     </footer>
   </body>
