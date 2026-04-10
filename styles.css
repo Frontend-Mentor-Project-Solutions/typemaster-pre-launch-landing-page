@@ -1,3 +1,37 @@
+:root {
+  --clr-neutral-900: hsl(220 50 17);
+  --clr-neutral-400: hsl(221 21 46);
+  --clr-neutral-200: hsl(198 28 93);
+  --clr-neutral-0: hsl(0 0 100);
+
+  --clr-orange-500: hsl(22 89 52);
+  --clr-orange-300: hsl(22 100 69);
+}
+
+/* fonts */
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--clr-neutral-400);
+}
+
+h1,
+h2,
+h3,
+a,
+span {
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 900;
+  color: var(--clr-neutral-900);
+}
+
 /* === LAYOUTS === */
 
 .page-grid {
@@ -152,6 +186,10 @@ footer {
 .hero {
   margin-block-start: clamp(2.5rem, 0.294rem + 7.353vw, 5rem);
   margin-block-end: clamp(1.5rem, 0.618rem + 2.941vw, 2.5rem);
+
+  p {
+    font-size: clamp(1rem, 0.792rem + 0.694vw, 1.125rem);
+  }
 }
 
 .features {
