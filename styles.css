@@ -1,3 +1,5 @@
+/* === LAYOUTS === */
+
 .page-grid {
   --page-padding: clamp(1rem, -0.667rem + 5.556vw, 2rem);
   --content-max-width: 1110px;
@@ -55,6 +57,19 @@ section {
   row-gap: 2rem;
 }
 
+.section-copy {
+  align-self: center;
+}
+
+.sidebar {
+  display: grid;
+  grid-template-columns: subgrid;
+
+  > * {
+    grid-column: 1 / -1;
+  }
+}
+
 /* tablet */
 
 @media (min-width: 700px) {
@@ -78,6 +93,16 @@ section {
 
   .features > * {
     grid-column: span 3;
+  }
+
+  .sidebar {
+    > :first-child {
+      grid-column: span 2;
+    }
+
+    > :last-child {
+      grid-column: span 4;
+    }
   }
 }
 
@@ -110,3 +135,39 @@ section {
     grid-column: span 1;
   }
 }
+
+/* === COMPONENTS === */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-block-start: clamp(1.5rem, 0.618rem + 2.941vw, 2.5rem);
+}
+
+footer {
+  text-align: center;
+  padding-block-end: clamp(1.5rem, 0.618rem + 2.941vw, 2.5rem);
+}
+
+.hero {
+  margin-block-start: clamp(2.5rem, 0.294rem + 7.353vw, 5rem);
+  margin-block-end: clamp(1.5rem, 0.618rem + 2.941vw, 2.5rem);
+}
+
+.features {
+  margin-block: clamp(4rem, 2.25rem + 5.833vw, 7.5rem);
+}
+
+article {
+  display: grid;
+
+  .icon-wrapper {
+    order: -1;
+    background-color: orange;
+    justify-self: flex-start;
+  }
+}
+
+/* === UTILITIES === */
+
+/* === EXCEPTIONS === */
