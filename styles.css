@@ -176,7 +176,7 @@ section {
 
     img:nth-child(2) {
       grid-column: span 2;
-      padding-right: 2rem; /* simulate gap b/w image and text*/
+      width: 445px;
     }
 
     .sidebar {
@@ -231,6 +231,7 @@ article {
     justify-self: flex-start;
     width: 65px;
     height: 65px;
+    border-radius: 1rem;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -252,6 +253,7 @@ a {
   padding-inline: 1.5rem;
   background-color: var(--clr-orange-500);
   color: var(--clr-neutral-0);
+  border-radius: 0.5rem;
 }
 
 .image-wrapper {
@@ -268,17 +270,18 @@ a {
     inset: 0;
     background-color: var(--clr-orange-500);
     mix-blend-mode: multiply;
+    border-radius: 1.25rem;
   }
+}
+
+.hero-image,
+.section-image {
+  border-radius: 1.25rem;
 }
 
 /* === UTILITIES === */
 
 /* === EXCEPTIONS === */
-
-[data-offset="right"] {
-  margin-right: calc(-50vw + 50%);
-  width: auto;
-}
 
 [data-pattern] {
   --pattern-width: 255px;
