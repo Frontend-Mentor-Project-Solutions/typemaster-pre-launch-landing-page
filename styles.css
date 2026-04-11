@@ -249,11 +249,41 @@ article {
 }
 
 a {
+  --button-color: var(--clr-orange-500);
+  --button-color-hover: var(--clr-orange-300);
+  --button-text: var(--clr-neutral-0);
+  --button-text-hover: var(--clr-neutral-0);
+
   padding-block: 1rem;
   padding-inline: 1.5rem;
-  background-color: var(--clr-orange-500);
-  color: var(--clr-neutral-0);
+  background-color: var(--button-color);
+  color: var(--button-text);
   border-radius: 0.5rem;
+  transition:
+    background 200ms ease-in,
+    color 200ms ease-in;
+
+  &:hover {
+    background-color: var(--button-color-hover);
+    color: var(--button-text-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--clr-neutral-0);
+    outline-offset: -4px;
+  }
+
+  &[data-variant="secondary"] {
+    --button-color: var(--clr-neutral-200);
+    --button-color-hover: var(--clr-neutral-900);
+    --button-text: var(--clr-neutral-900);
+    --button-text-hover: var(--clr-neutral-0);
+
+    &:focus-visible {
+      outline: 2px solid var(--clr-neutral-900);
+      outline-offset: 0;
+    }
+  }
 }
 
 .image-wrapper {
