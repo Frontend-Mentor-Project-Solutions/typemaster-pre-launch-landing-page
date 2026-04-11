@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700;900&display=swap"
       rel="stylesheet"
     />
 
@@ -31,7 +31,7 @@
       </header>
 
       <main class="content-grid">
-        <section class="hero">
+        <section class="hero" data-pattern="top-right">
           <div class="section-copy">
             <h1>Typemaster Keyboard</h1>
 
@@ -50,21 +50,28 @@
             class="hero-image"
             src="assets/images/image-keyboard.jpg"
             alt="A mechanical keyboard"
+            data-offset="right"
           />
         </section>
 
-        <section class="gallery">
-          <img
-            src="assets/images/image-phone-and-keyboard.jpg"
-            alt="Typemaster mechanical keyboard next to a smartphone"
-          />
+        <section class="gallery" data-pattern="bottom-left">
+          <div class="image-wrapper" data-offset="left">
+            <img
+              src="assets/images/image-phone-and-keyboard.jpg"
+              alt="Typemaster mechanical keyboard next to a smartphone"
+            />
+          </div>
           <img
             src="assets/images/image-glass-and-keyboard.jpg"
             alt="Typemaster mechanical keyboard on a modern workspace desk "
           />
 
           <div class="section-copy sidebar">
-            <h2>Mechanical Wireless Keyboard</h2>
+            <h2>
+              Mechanical <br />
+              Wireless <br />
+              Keyboard
+            </h2>
 
             <p>
               The Typemaster keyboard boasts top-notch build and practical

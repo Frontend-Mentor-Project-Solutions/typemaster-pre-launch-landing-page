@@ -15,6 +15,7 @@ body {
   font-size: 1rem;
   font-weight: 500;
   color: var(--clr-neutral-400);
+  overflow-x: clip;
 }
 
 h1,
@@ -35,7 +36,7 @@ h3 {
 
 span,
 a {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h1 {
@@ -94,10 +95,8 @@ section {
 .gallery {
   row-gap: 4rem;
 
-  img:nth-child(1) {
+  .image-wrapper {
     grid-column: span 1;
-    height: 100%;
-    object-fit: cover;
   }
 
   img:nth-child(2) {
@@ -134,7 +133,7 @@ section {
   }
 
   .gallery {
-    img:nth-child(1) {
+    .image-wrapper {
       grid-column: span 2;
     }
 
@@ -154,6 +153,7 @@ section {
 
     > :last-child {
       grid-column: span 4;
+      margin-left: 2rem;
     }
   }
 }
@@ -170,16 +170,21 @@ section {
   }
 
   .gallery {
-    img:nth-child(1) {
+    .image-wrapper {
       grid-column: span 1;
     }
 
     img:nth-child(2) {
       grid-column: span 2;
+      padding-right: 2rem; /* simulate gap b/w image and text*/
     }
 
-    .section-copy {
+    .sidebar {
       grid-column: span 1;
+
+      > :last-child {
+        margin-left: 0;
+      }
     }
   }
 
@@ -240,7 +245,6 @@ article {
   gap: clamp(1.5rem, -1.5rem + 6.25vw, 2.5rem);
   align-items: center;
   flex-wrap: wrap;
-  max-width: fit-content;
 }
 
 a {
@@ -250,6 +254,52 @@ a {
   color: var(--clr-neutral-0);
 }
 
+.image-wrapper {
+  position: relative;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr-orange-500);
+    mix-blend-mode: multiply;
+  }
+}
+
 /* === UTILITIES === */
 
 /* === EXCEPTIONS === */
+
+[data-offset="right"] {
+  margin-right: calc(-50vw + 50%);
+  width: auto;
+}
+
+[data-pattern] {
+  --pattern-width: 255px;
+
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url("assets/icons/pattern-square.svg");
+    background-repeat: no-repeat;
+    width: var(--pattern-width);
+    height: 240px;
+  }
+}
+
+[data-pattern="top-right"]::before {
+  right: calc(0px - var(--pattern-width) - 2rem);
+}
+
+[data-pattern="bottom-left"]::before {
+  left: calc(0px - var(--pattern-width) - 2rem);
+  bottom: 0;
+}
