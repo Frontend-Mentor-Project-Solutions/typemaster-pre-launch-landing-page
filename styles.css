@@ -30,6 +30,24 @@ h2,
 h3 {
   font-weight: 900;
   color: var(--clr-neutral-900);
+  margin-block-end: 1.5rem;
+}
+
+span,
+a {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(3rem, 2.167rem + 2.778vw, 3.5rem);
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 /* === LAYOUTS === */
@@ -106,7 +124,7 @@ section {
 
 /* tablet */
 
-@media (min-width: 700px) {
+@media (min-width: 750px) {
   .content-grid {
     grid-template-columns: repeat(6, 1fr);
   }
@@ -194,16 +212,42 @@ footer {
 
 .features {
   margin-block: clamp(4rem, 2.25rem + 5.833vw, 7.5rem);
+  grid-auto-rows: 65px 53px auto; /* since the amount of rows are dynamic due to switching layouts*/
 }
 
 article {
   display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
 
   .icon-wrapper {
     order: -1;
-    background-color: orange;
+    background-color: var(--clr-orange-500);
     justify-self: flex-start;
+    width: 65px;
+    height: 65px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    margin-block-end: clamp(2rem, 0.333rem + 5.556vw, 3rem);
   }
+}
+
+.cta-group {
+  margin-block-start: clamp(2rem, 1.167rem + 2.778vw, 2.5rem);
+  display: flex;
+  gap: clamp(1.5rem, -1.5rem + 6.25vw, 2.5rem);
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: fit-content;
+}
+
+a {
+  padding-block: 1rem;
+  padding-inline: 1.5rem;
+  background-color: var(--clr-orange-500);
+  color: var(--clr-neutral-0);
 }
 
 /* === UTILITIES === */
